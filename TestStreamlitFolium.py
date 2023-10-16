@@ -13,7 +13,9 @@ import geopandas as gp
 import Functions as funcs 
 import datetime
 import time
-import os
+
+#Set with of the app
+st.set_page_config(layout="wide")                 # Source: https://discuss.streamlit.io/t/how-to-increase-the-width-of-web-page/7697              
 
 st.title('Tomatoes in the sun')
 st.divider()
@@ -47,12 +49,7 @@ my_bar.empty()
 
 st.button("Rerun")
 
-# Create data and output folders
-if not os.path.exists('data'):
-    os.makedirs('data')
-if not os.path.exists('output'):
-    os.makedirs('output')
-
+## Create map garden
 # functions, extract location
 lon, lat = funcs.extract_garden(address)
 
@@ -67,8 +64,19 @@ gardenmap = folium.Map(location=[lat, lon], zoom_start=20)
 # Add garden geojson to map
 folium.GeoJson(gardenGDF).add_to(gardenmap)
 
-# Add layer control
-#folium.LayerControl().add_to(gardenmap)
 
-#start application, go to terminal
-st_data = st_folium(gardenmap, width = 750)
+# Make 2 colums for sun exposure and soil data maps
+col1, col2 = st.columns(2)
+
+with col1:
+   st.header("Sun exposure per hour")
+   # add map to colum
+   st_data = st_folium(gardenmap, width = 750)
+
+with col2:
+   st.header("Soil quality for vegetables")
+   # st_data = st_folium(....., width = 750)
+   
+# Add combined map
+st.header("Ideal places to make your vegetable garden")
+# st_data = st_folium(....., width = 750)
