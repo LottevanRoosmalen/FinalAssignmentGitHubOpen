@@ -46,6 +46,12 @@ my_bar.empty()
 
 st.button("Rerun")
 
+# Create data and output folders
+if not os.path.exists('data'):
+    os.makedirs('data')
+if not os.path.exists('output'):
+    os.makedirs('output')
+
 # functions, extract location
 lon, lat = funcs.extract_garden(address)
 
