@@ -1,0 +1,23 @@
+name: requirements
+dependencies:
+  - python
+  - numpy
+  - matplotlib
+  - spyder
+  - gdal
+  - shapely
+  - pandas
+  - geopandas
+  - fiona
+  - owslib
+  - folium
+  - osmnx
+  - contextily
+  - rasterio
+  - rasterstats
+  - affine
+  - rtree
+  - keplergl
+  - TransBigData
+  - streamlit
+  - streamlit_folium
