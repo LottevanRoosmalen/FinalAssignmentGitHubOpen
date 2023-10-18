@@ -8,7 +8,6 @@ Created on Wed Oct 18 14:42:14 2023
 import os
 import Functions as funcs 
 import streamlit as st                             # Source: https://docs.streamlit.io/
-from streamlit_folium import st_folium             # Source: https://github.com/randyzwitch/streamlit-folium
 import folium
 import geopandas as gp
 import datetime
