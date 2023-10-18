@@ -61,7 +61,7 @@ funcs.extract_garden(address)
 # call function Clip BAG
 funcs.extract_BAG()
 # call function CLip soil raster
-#funcs.clip_SoilRaster()
+funcs.clip_SoilRaster()
 # call function sunexposure
 funcs.calculate_sun_exposure(dateString, 'day')
     
@@ -69,7 +69,7 @@ funcs.calculate_sun_exposure(dateString, 'day')
 import matplotlib.image as mpimg
 
 img = mpimg.imread('data/sunshine.png')
-#img2 = mpimg.imread('data/soilraster.png')
+img2 = mpimg.imread('data/soilraster.png')
 
 
 ### Part two app layout
@@ -84,7 +84,7 @@ with col1:
 
 with col2:
     st.header("Soil quality for vegetables")
-    #st.image(img2, caption=None, width=750, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
+    st.image(img2, caption=None, width=750, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
     # add info
     st.write("There is offcourse a possibility that the soil in your garden does not have a good soil quality for vegetables. If this is the case, do not let it scare you!! You can still make your own vegetable garden, but maybe consider to make a planter.")
     st.caption("if your soil quality is low, you can consider to not pay attention to it looking at suitable places vor your garden (set preference to only sunhours)")
@@ -105,10 +105,10 @@ st.subheader("based on your preferences we provide you with the most suitable lo
 
 ### run code and make map for optimal place vegetable garden
 ## run function combine data to location vegetable garden
-#funcs.combinedata(Choice)
-#img3 = mpimg.imread('data/combinedraster.png')
+funcs.combinedata(Choice)
+img3 = mpimg.imread('data/combinedraster.png')
 
 
 ### part three app layout
 ## add map
-#st.image(img3, caption=None, width=750, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
+st.image(img3, caption=None, width=750, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
