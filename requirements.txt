@@ -5,3 +5,4 @@ OWSLib==0.29.2
 overrides==7.4.0
 geocube==v0.4.2
 rasterio==1.2.10
+geopy==2.4.0
